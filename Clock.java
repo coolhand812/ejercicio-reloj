@@ -76,12 +76,16 @@ public class Clock
     
     /**
      * sets a new time without having to delete clock or generate a new one.
-     * @hrs Is a stand-in for the variable hours.
-     * @min Is a stand-in for the variable minutes.
+     * @param hrs Is a stand-in for the variable hours.
+     * @param min Is a stand-in for the variable minutes.
      */
     void setNewTime(int hrs, int min)
     {
-        hours = hrs;
-        minutes = min;
+        if(hrs < 24){
+            hours = hrs;
+        }
+        if(min < 60){
+            minutes = min;
+        }
     }
 }
